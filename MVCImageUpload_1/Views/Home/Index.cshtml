@@ -1,0 +1,34 @@
+﻿@model TestClassVM
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<!--
+Eğer siz form içerisinden bir dosya gönderecekseniz formunuzun ek olarka bir attribute'a sahip olması gerekir. Bu attribute da enctype olarak belirtilmiştir. Eğer formunuz bu attribute'a sahipr değilse post durumunda asla dosya gönderemezsiniz.    
+
+-->
+
+
+@using (Html.BeginForm("Index","Home",FormMethod.Post, new {enctype="multipart/form-data" }))
+{
+    <div>
+        İsim Giriniz
+    </div>
+    <br />
+    <div>
+        @Html.TextBoxFor(x=> x.TestClass.Name)
+    </div>
+    <br />
+    <div>
+        <input type="file" name="resim" value="" />
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+}
+

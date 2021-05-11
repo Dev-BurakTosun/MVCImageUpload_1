@@ -1,0 +1,20 @@
+﻿@model TestClassVM
+
+@{
+    ViewBag.Title = "ListTestClasses";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>İsim</th>
+        <th>Resim</th>
+    </tr>
+    @foreach (TestClass item in Model.TestClasses)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td><img src="@item.ImagePath" width="30" height="30" /></td>
+        </tr>
+    }
+</table>
+
